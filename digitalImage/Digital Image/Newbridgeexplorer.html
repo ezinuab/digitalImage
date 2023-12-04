@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: STEELBLUE;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: STEELBLUE;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: STEELBLUE;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: LIGHTBLUE;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<h2>The Newbridge Explorer</h2>
+<p>Newbridge through my lenses</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openLocation(event, 'Liffey Linear Park')">Liffey Linear Park</button>
+  <button class="tablinks" onclick="openLocation(event, 'Newbridge Town Centre')">Newbridge Town Centre</button>
+  <button class="tablinks" onclick="openLocation(event, 'Bus Service')"> Bus Service</button>
+   <button class="tablinks" onclick="openLocation(event, 'Train Station')">Train Station</button>
+   
+</div>
+
+<div id="Liffey Linear Park" class="tabcontent">
+  <h3>Liffey Linear Park</h3>
+  <p>Liffey Linear Park.</p>
+</div>
+
+<div id="Newbridge Town Centre" class="tabcontent">
+  <h3>Newbridge Town Centre</h3>
+  <p>Newbridge Town Centre</p> 
+</div>
+
+<div id="Bus Service" class="tabcontent">
+  <h3>Bus Service</h3>
+  <p>Bus Service</p>
+</div>
+
+<div id="Train Station" class="tabcontent">
+  <h3>Train Station</h3>
+  <p>Train Station</p>
+</div>
+
+<script>
+function openLocation(evt, locationName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(locationName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+
+</script>
+   
+</body>
+
+
+</html> 
